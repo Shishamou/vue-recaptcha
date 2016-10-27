@@ -9,7 +9,7 @@
 
   export default {
     props: {
-      key: {
+      dataKey: {
         type: String,
         required: true
       },
@@ -29,7 +29,7 @@
         callback: this.emitVerify,
         'expired-callback': this.emitExpired
       });
-      recaptcha.render(this.$refs.container, this.key, opts)
+      recaptcha.render(this.$refs.container, this.dataKey, opts)
         .then((id) => {
           widgetId = id;
           self.$emit('render', widgetId);
